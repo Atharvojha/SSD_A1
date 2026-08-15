@@ -45,11 +45,15 @@ to sign in.
 
 ## Structure
 
-- `index.html` - login page
-- `pages/` - dashboard, courses, grades
-- `css/style.css` - shared styles
-- `js/main.js` - shared client-side logic
-- `includes/` - reserved for shared partials during the overhaul
+| Path                  | Description                                              |
+|------------------------|-----------------------------------------------------------|
+| `index.html`           | Login page and entry point                                |
+| `pages/dashboard.html` | Post-login landing page with a course/grade summary table |
+| `pages/courses.html`   | List of enrolled courses                                  |
+| `pages/grades.html`    | Per-assignment grade breakdown                             |
+| `css/style.css`        | Shared styles used across all pages                       |
+| `js/main.js`           | Shared client-side logic (currently: login form handling)  |
+| `includes/`            | Reserved for shared partials during the overhaul           |
 
 ## Status
 
