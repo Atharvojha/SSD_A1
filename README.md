@@ -55,6 +55,18 @@ to sign in.
 | `js/main.js`           | Shared client-side logic (currently: login form handling)  |
 | `includes/`            | Reserved for shared partials during the overhaul           |
 
+## Demo Credentials
+
+The login form currently checks credentials against values hardcoded in
+`js/main.js` (there is no backend yet). To sign in locally:
+
+- Username: `student`
+- Password: `password123`
+
+> **Note:** Client-side hardcoded credentials are a known legacy issue and
+> are slated for removal once real authentication is introduced during the
+> overhaul.
+
 ## Status
 
 Baseline import prior to overhaul. See project issues/PRs for planned work.
