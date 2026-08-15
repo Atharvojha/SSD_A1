@@ -16,3 +16,8 @@ build/
 # Env
 .env
 .env.local
+
+# C++ build artifacts
+*.o
+*.out
+tools/gpa-calculator/gpa_calculator
