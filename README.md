@@ -11,6 +11,18 @@ slated for overhaul: modernized tooling, structure, and feature work.
   the app can technically be opened directly from disk, but serving it
   over HTTP avoids `file://` quirks such as blocked relative fetches
 
+## Getting Started
+
+Clone the repository and move into the project directory:
+
+```bash
+git clone git@github.com:Atharvojha/SSD_A1.git
+cd SSD_A1
+```
+
+(If you haven't set up SSH access with GitHub, use the HTTPS URL instead:
+`git clone https://github.com/Atharvojha/SSD_A1.git`)
+
 ## Structure
 
 - `index.html` - login page
