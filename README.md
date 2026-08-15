@@ -67,6 +67,25 @@ The login form currently checks credentials against values hardcoded in
 > are slated for removal once real authentication is introduced during the
 > overhaul.
 
+## Contributing
+
+- Create a feature branch off `main` (e.g. `feature/grades-api`) rather than
+  committing directly to `main`.
+- Keep commits scoped and use descriptive messages (e.g.
+  `fix: correct grade table column alignment`, not `fix stuff`).
+- Open a pull request describing what changed and why before merging.
+
+## Troubleshooting
+
+- **Blank page or styles missing when opening `index.html` directly** —
+  some browsers restrict relative asset loading over `file://`. Serve the
+  project with a local static server instead (see
+  [Running Locally](#running-locally)).
+- **Login always fails** — double-check you're using the exact
+  [demo credentials](#demo-credentials); the check is case-sensitive.
+- **Changes not showing up** — hard-refresh the browser (Cmd+Shift+R) to
+  bypass the cache, since there's no dev server with live reload yet.
+
 ## Status
 
 Baseline import prior to overhaul. See project issues/PRs for planned work.
