@@ -23,6 +23,26 @@ cd SSD_A1
 (If you haven't set up SSH access with GitHub, use the HTTPS URL instead:
 `git clone https://github.com/Atharvojha/SSD_A1.git`)
 
+## Running Locally
+
+Start a static file server from the project root, then open it in your browser.
+
+Using Python 3:
+
+```bash
+python3 -m http.server 8000
+```
+
+Using Node.js:
+
+```bash
+npx http-server -p 8000
+```
+
+Then visit `http://localhost:8000` in your browser. You'll land on the
+login page (`index.html`); see [Demo Credentials](#demo-credentials) below
+to sign in.
+
 ## Structure
 
 - `index.html` - login page
