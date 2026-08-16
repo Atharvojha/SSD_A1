@@ -1,7 +1,8 @@
 # Student Portal
 
-A legacy student portal codebase actively being modernized: this branch of
-work focuses on replacing hardcoded HTML with dynamic, data-driven pages.
+A student portal originally built as a static HTML/CSS/JS site, now being
+incrementally overhauled with authentication, profile, and settings features,
+and moving toward more dynamic, data-driven pages.
 
 ## Prerequisites
 
