@@ -24,13 +24,39 @@
     </div>
 
     <div id="content">
+      <div id="statCards">
+        <div class="stat-card">
+          <span class="stat-value" id="statCredits">7</span>
+          <span class="stat-label">Credits Completed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statCourses">2</span>
+          <span class="stat-label">Active Courses</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statGPA">--</span>
+          <span class="stat-label">GPA</span>
+        </div>
+      </div>
+
       <table border="1" cellpadding="5" cellspacing="0" id="summaryTable">
-        <tr><th>Course</th><th>Grade</th></tr>
-        <tr><td>Intro to Programming</td><td>A</td></tr>
-        <tr><td>Data Structures</td><td>B+</td></tr>
+        <tr>
+          <th data-sort-key="course" class="sortable">Course</th>
+          <th data-sort-key="grade" class="sortable">Grade</th>
+        </tr>
+        <tr data-grade="A" data-credits="3"><td>Intro to Programming</td><td>A</td></tr>
+        <tr data-grade="B+" data-credits="4"><td>Data Structures</td><td>B+</td></tr>
       </table>
+
+      <h3>Recent Activity</h3>
+      <ul id="activityFeed">
+        <li><span class="activity-date">2026-08-14</span> Grade posted for Data Structures Midterm (88)</li>
+        <li><span class="activity-date">2026-08-10</span> Submitted Homework 1 for Intro to Programming</li>
+        <li><span class="activity-date">2026-08-01</span> Enrolled in MATH150 - Calculus I</li>
+      </ul>
     </div>
   </div>
 
+  <script src="../js/dashboard.js"></script>
 </body>
 </html>
