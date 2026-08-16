@@ -41,6 +41,26 @@
         <input type="checkbox" id="notifyAnnouncements">
         Email me about course announcements
       </label>
+
+      <h3>Change Password</h3>
+      <p style="font-size:13px;color:#777;">
+        Note: this is a front-end demo only; the portal has no backend yet,
+        so no real credential is changed.
+      </p>
+      <form id="passwordForm">
+        <label for="currentPassword">Current Password</label>
+        <input type="password" id="currentPassword">
+
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword">
+
+        <label for="confirmPassword">Confirm New Password</label>
+        <input type="password" id="confirmPassword">
+
+        <input type="submit" value="Change Password" id="changePasswordBtn">
+        <p id="passwordError" style="color:red;display:none;"></p>
+        <p id="passwordSuccess" style="color:green;display:none;">Password updated (demo only).</p>
+      </form>
     </div>
   </div>
 

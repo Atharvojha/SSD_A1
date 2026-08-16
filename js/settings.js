@@ -40,4 +40,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
   notifyGrades.addEventListener("change", persistNotificationPrefs);
   notifyAnnouncements.addEventListener("change", persistNotificationPrefs);
+
+  var passwordForm = document.getElementById("passwordForm");
+  var passwordError = document.getElementById("passwordError");
+  var passwordSuccess = document.getElementById("passwordSuccess");
+
+  passwordForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var current = document.getElementById("currentPassword").value;
+    var next = document.getElementById("newPassword").value;
+    var confirm = document.getElementById("confirmPassword").value;
+
+    passwordSuccess.style.display = "none";
+
+    if (!current || !next || !confirm) {
+      passwordError.textContent = "All fields are required.";
+      passwordError.style.display = "block";
+      return;
+    }
+
+    if (next.length < 8) {
+      passwordError.textContent = "New password must be at least 8 characters.";
+      passwordError.style.display = "block";
+      return;
+    }
+
+    if (next !== confirm) {
+      passwordError.textContent = "New password and confirmation do not match.";
+      passwordError.style.display = "block";
+      return;
+    }
+
+    passwordError.style.display = "none";
+    passwordSuccess.style.display = "block";
+    passwordForm.reset();
+    window.setTimeout(function () {
+      passwordSuccess.style.display = "none";
+    }, 3000);
+  });
 });
