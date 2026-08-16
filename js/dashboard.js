@@ -39,9 +39,50 @@ function computeStats(courses) {
   };
 }
 
+function sortTableRows(table, sortKey, ascending) {
+  var rows = Array.prototype.slice.call(table.querySelectorAll("tr[data-grade]"));
+
+  rows.sort(function (a, b) {
+    var valueA, valueB;
+    if (sortKey === "grade") {
+      valueA = GRADE_SCALE[a.getAttribute("data-grade")] || 0;
+      valueB = GRADE_SCALE[b.getAttribute("data-grade")] || 0;
+    } else {
+      valueA = a.cells[0].textContent.toLowerCase();
+      valueB = b.cells[0].textContent.toLowerCase();
+    }
+
+    if (valueA < valueB) return ascending ? -1 : 1;
+    if (valueA > valueB) return ascending ? 1 : -1;
+    return 0;
+  });
+
+  rows.forEach(function (row) {
+    table.appendChild(row);
+  });
+}
+
+function setupSortableTable() {
+  var table = document.getElementById("summaryTable");
+  var headers = table.querySelectorAll("th.sortable");
+
+  headers.forEach(function (header) {
+    header.style.cursor = "pointer";
+    header.dataset.ascending = "true";
+
+    header.addEventListener("click", function () {
+      var ascending = header.dataset.ascending === "true";
+      sortTableRows(table, header.dataset.sortKey, ascending);
+      header.dataset.ascending = ascending ? "false" : "true";
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   var stats = computeStats(readCourseRows());
   document.getElementById("statCredits").textContent = stats.credits;
   document.getElementById("statCourses").textContent = stats.courseCount;
   document.getElementById("statGPA").textContent = stats.gpa.toFixed(2);
+
+  setupSortableTable();
 });
