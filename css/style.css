@@ -164,3 +164,12 @@ html.theme-dark .login-box input[type="password"] {
   color: #eee;
   border-color: #555;
 }
+
+@media print {
+  #nav,
+  .logout-link,
+  #statCards,
+  #activityFeed {
+    display: none;
+  }
+}
