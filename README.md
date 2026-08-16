@@ -86,6 +86,16 @@ The login form currently checks credentials against values hardcoded in
 - **Changes not showing up** — hard-refresh the browser (Cmd+Shift+R) to
   bypass the cache, since there's no dev server with live reload yet.
 
+## Known Limitations
+
+- **No backend** — all data (grades, courses, profile) is either hardcoded
+  in HTML or stored client-side via `localStorage`/`sessionStorage`. Nothing
+  persists across browsers or devices.
+- **Login is a single hardcoded demo account** — see
+  [Demo Credentials](#demo-credentials). There is no real user database.
+- **Change Password on the Settings page is a front-end-only demo** — it
+  validates input but does not change any real credential.
+
 ## Status
 
 Baseline import prior to overhaul. See project issues/PRs for planned work.
