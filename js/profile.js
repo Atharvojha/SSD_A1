@@ -33,6 +33,20 @@ function renderProfile(profile) {
   document.getElementById("editMajor").value = profile.major;
 }
 
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function showProfileError(message) {
+  var errorEl = document.getElementById("profileError");
+  errorEl.textContent = message;
+  errorEl.style.display = "block";
+}
+
+function hideProfileError() {
+  document.getElementById("profileError").style.display = "none";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   var profile = loadProfile();
   renderProfile(profile);
@@ -41,14 +55,23 @@ document.addEventListener("DOMContentLoaded", function () {
   profileForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    var updated = {
-      name: document.getElementById("editName").value.trim(),
-      id: profile.id,
-      email: document.getElementById("editEmail").value.trim(),
-      major: document.getElementById("editMajor").value.trim()
-    };
+    var name = document.getElementById("editName").value.trim();
+    var email = document.getElementById("editEmail").value.trim();
+    var major = document.getElementById("editMajor").value.trim();
 
-    profile = updated;
+    if (!name || !email || !major) {
+      showProfileError("All fields are required.");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      showProfileError("Please enter a valid email address.");
+      return;
+    }
+
+    hideProfileError();
+
+    profile = { name: name, id: profile.id, email: email, major: major };
     saveProfile(profile);
     renderProfile(profile);
   });
