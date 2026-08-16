@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Portal - Settings</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script>var SP_LOGIN_PATH = "../index.html";</script>
+  <script src="../js/guard.js"></script>
+  <script src="../js/theme.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="header">
+      <h2>Settings</h2>
+      <a href="../index.html" class="logout-link">Logout</a>
+    </div>
+
+    <div id="nav">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="academics/courses.html">Courses</a></li>
+        <li><a href="academics/grades.html">Grades</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </div>
+
+    <div id="content">
+      <h3>Appearance</h3>
+      <label>
+        <input type="checkbox" id="darkModeToggle">
+        Dark Mode
+      </label>
+
+      <h3>Notifications</h3>
+      <label>
+        <input type="checkbox" id="notifyGrades">
+        Email me when a new grade is posted
+      </label>
+      <br>
+      <label>
+        <input type="checkbox" id="notifyAnnouncements">
+        Email me about course announcements
+      </label>
+
+      <h3>Change Password</h3>
+      <p style="font-size:13px;color:#777;">
+        Note: this is a front-end demo only; the portal has no backend yet,
+        so no real credential is changed.
+      </p>
+      <form id="passwordForm">
+        <label for="currentPassword">Current Password</label>
+        <input type="password" id="currentPassword">
+
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword">
+
+        <label for="confirmPassword">Confirm New Password</label>
+        <input type="password" id="confirmPassword">
+
+        <input type="submit" value="Change Password" id="changePasswordBtn">
+        <p id="passwordError" style="color:red;display:none;"></p>
+        <p id="passwordSuccess" style="color:green;display:none;">Password updated (demo only).</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/settings.js"></script>
+</body>
+</html>
