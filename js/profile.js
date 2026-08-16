@@ -47,6 +47,14 @@ function hideProfileError() {
   document.getElementById("profileError").style.display = "none";
 }
 
+function showProfileSuccess() {
+  var successEl = document.getElementById("profileSuccess");
+  successEl.style.display = "block";
+  window.setTimeout(function () {
+    successEl.style.display = "none";
+  }, 3000);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   var profile = loadProfile();
   renderProfile(profile);
@@ -74,5 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     profile = { name: name, id: profile.id, email: email, major: major };
     saveProfile(profile);
     renderProfile(profile);
+    showProfileSuccess();
   });
 });
