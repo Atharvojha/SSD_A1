@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (user == VALID_USER && pass == VALID_PASS) {
         failedAttempts = 0;
+        sessionStorage.setItem("sp_authenticated", "true");
+        sessionStorage.setItem("sp_username", user);
         window.location = "pages/dashboard.html";
         return;
       }
