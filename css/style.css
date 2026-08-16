@@ -125,3 +125,42 @@ table th, table td {
     font-size: 14px;
   }
 }
+
+html.theme-dark body {
+  background-color: #1a1a1a;
+  color: #eee;
+}
+
+html.theme-dark #wrapper {
+  background: #242424;
+}
+
+html.theme-dark #header {
+  border-bottom-color: #555;
+}
+
+html.theme-dark a {
+  color: #8ab4f8;
+}
+
+html.theme-dark table th,
+html.theme-dark table td {
+  border-color: #444;
+  color: #eee;
+}
+
+html.theme-dark .stat-card {
+  background: #2c2c2c;
+  border-color: #444;
+}
+
+html.theme-dark .login-box {
+  border-color: #444;
+}
+
+html.theme-dark .login-box input[type="text"],
+html.theme-dark .login-box input[type="password"] {
+  background: #2c2c2c;
+  color: #eee;
+  border-color: #555;
+}
