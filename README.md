@@ -1,7 +1,7 @@
 # Student Portal
 
-A legacy student portal codebase (static HTML/CSS/vanilla JS, no build tooling)
-slated for overhaul: modernized tooling, structure, and feature work.
+A student portal originally built as a static HTML/CSS/JS site, now being
+incrementally overhauled with authentication, profile, and settings features.
 
 ## Prerequisites
 
