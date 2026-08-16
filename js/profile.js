@@ -55,9 +55,26 @@ function showProfileSuccess() {
   }, 3000);
 }
 
+function exportProfileAsJSON(profile) {
+  var blob = new Blob([JSON.stringify(profile, null, 2)], { type: "application/json" });
+  var url = URL.createObjectURL(blob);
+
+  var link = document.createElement("a");
+  link.href = url;
+  link.download = "profile.json";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   var profile = loadProfile();
   renderProfile(profile);
+
+  document.getElementById("exportProfileBtn").addEventListener("click", function () {
+    exportProfileAsJSON(profile);
+  });
 
   var profileForm = document.getElementById("profileForm");
   profileForm.addEventListener("submit", function (e) {
